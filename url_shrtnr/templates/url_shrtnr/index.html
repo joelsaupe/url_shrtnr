@@ -1,0 +1,53 @@
+{% extends 'sau_pe/base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static "url_shrtnr/shrtnr.css" %}">
+{% endblock %}
+
+{% block title %}
+  url shrtnr
+{% endblock %}
+
+{% block navbar %}
+  {% include "sau_pe/navbar.html" with active="shrtnr" %}
+{% endblock %}
+
+{% block content %}
+  <section class="header">
+    <h1>url shrtnr</h1>
+  </section>
+  <section id="form" class="form">
+    <form id="url-form" class="container">
+    {% csrf_token %}
+      <div class="row">
+        <div class="col-md-12">
+        <input type="url" placeholder="Enter URL Here" required="required" name="requested_url" id="requested_url" class="url-input" autofocus>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="slug-form-group">
+            <label for="requested_slug">sau.pe/</label>
+            <input placeholder="custom slug" type="text" name="requested_slug" id="requested_slug">
+            <span class="availability-message"></span>
+            <a class="taken-url"></a>
+          </div>    
+        </div>
+        <div class="col-md-6">
+          <input type="submit" value="shorten" class="btn btn-success">
+        </div>
+      </div>
+    </form>
+  </section>
+  <section id="results">
+    <div class="container">
+      <input id="result_url">
+      <h2>Press <span class="key">ctrl</span> + <span class="key">c</span> to copy</h2>
+      <button class="btn btn-link" onclick="location.reload();">Click to shorten another</button>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static "url_shrtnr/shrtnr.js" %}"></script>
+{% endblock %}
