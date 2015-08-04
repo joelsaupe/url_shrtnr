@@ -5,7 +5,7 @@ URL Shrtnr is a basic URL Shortener app originally used on <a href="http://sau.p
 Quick start
 ===========
 
-1. Add "url_shrntr" to your INSTALLED_APPS setting like this:
+1 - Add "url_shrntr" to your INSTALLED_APPS setting like this:
 ```
 INSTALLED_APPS = (
     ...
@@ -13,7 +13,7 @@ INSTALLED_APPS = (
 )
 ```
 
-2. Include the url_shrtnr URLconf in your project urls.py at the very end. This is so that the other urls will take priority over the slugs.
+2 - Include the url_shrtnr URLconf in your project urls.py at the very end. This is so that the other urls will take priority over the slugs.
 ```
 urlpatterns = [
   ...
@@ -22,7 +22,10 @@ urlpatterns = [
 ]
 ```
 
-3. Run `python manage.py migrate` to create the models.
-4. Change the domain to localhost:8000 (or whatever you are using), in both the views.py and shrtnr.js files.
-5. Start the development server and visit http://127.0.0.1:8000/shrtnr/ to create a shortened url.
-6. Copy the link and paste it into the browser.
+3 - Run `python manage.py migrate` to create the models.
+
+4 - Change the domain to localhost:8000 (or whatever you are using), in both the views.py and shrtnr.js files.
+
+5 - Start the development server and visit http://127.0.0.1:8000/shrtnr/ to create a shortened url.
+
+6 - Copy the link and paste it into the browser.
